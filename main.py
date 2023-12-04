@@ -2,18 +2,28 @@ from scipy import special
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+
 # Sigmoid Function
 # 1 numer
 def sigmoidFunction(x):
-    y = 1 / (1 + np.exp(-x))
-    return y
+    return 1 / (1 + np.exp(-x))
+
+
 # 2 Array
 def sigmoidFunctionArr(x):
-    y = []
-    for temp in x:
-        y.append(sigmoidFunction(temp))
-    return y
+    return 1 / (1 + np.exp(-(np.array(x))))
+
+
+def tanhFunction(x):
+    return np.tanh(x)
+
+
+def tanhFunctionArr(x):
+    return np.tanh(np.array(x))
 
 
 print(sigmoidFunction(1))
-print(sigmoidFunctionArr([1, 2, 4, 5, -2, 45, 24. - 234]))
+print(sigmoidFunctionArr([-3, -2, -1, 1, 2, 3]))
+print(tanhFunction(1))
+print(tanhFunctionArr([1, 2, 4, 5, -2, 45, 24. - 234]))
